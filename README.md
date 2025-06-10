@@ -229,7 +229,7 @@ python scripts/index_books.py
 
 ### Configuration
 
-1. **Configure the server:**
+**Configure the server:**
 ```yaml
 # config.yaml
 embeddings:
@@ -245,8 +245,7 @@ books:
   data_dir: "data/epub"
   index_dir: "data/vector_db"
 ```
-
-2. **Add to Claude Desktop config:**
+**Add to Claude Desktop config:**
 ```json
 {
   "mcpServers": {
@@ -263,13 +262,13 @@ books:
 Once configured, the tools are available in any MCP client:
 
 ```
-You: What does Chip Huyen say about feature engineering?
+You: What does the <author> say about feature engineering?
 Assistant: I'll search the ML textbooks for information about feature engineering.
 
 [Calling searchBooks with query="feature engineering"]
-[Found 5 relevant sections in "Designing Machine Learning Systems"]
+[Found 5 relevant sections in "<Book Title>"]
 
-According to Chip Huyen in "Designing Machine Learning Systems":
+According to <author> in "<Book Title>":
 
 Feature engineering is described as... [content with citations]
 ```
@@ -399,7 +398,3 @@ See [USER_GUIDE.md](USER_GUIDE.md) for details on:
 - Improving search algorithms
 - Supporting new book formats
 - Performance optimizations
-
-## License
-
-[Your license here]
