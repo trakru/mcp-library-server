@@ -51,6 +51,7 @@ data/epub/
 logs/
 *.log
 data/processed
+.vs/
 
 # Vector database
 data/vector_db/
