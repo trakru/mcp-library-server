@@ -1,0 +1,33 @@
+embeddings:
+  model: "all-MiniLM-L6-v2"
+  device: "cpu"
+  batch_size: 32
+  max_length: 512
+  cache_dir: "./test_cache"
+
+generation:
+  model: "qwen2.5:7b"
+  base_url: "http://localhost:11434"
+  temperature: 0.7
+  max_tokens: 2000
+  timeout: 30
+
+search:
+  top_k: 5
+  max_results: 5
+  similarity_threshold: 0.7
+
+books:
+  data_dir: "./test_data/epub"
+  processed_dir: "./test_data/processed"
+  index_dir: "./test_data/index"
+
+vector_store:
+  collection_name: "test_books"
+  chunk_size: 512
+  chunk_overlap: 50
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./test_logs/mcp_server.log"
