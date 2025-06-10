@@ -50,6 +50,7 @@ data/epub/
 *.epub
 logs/
 *.log
+data/processed
 
 # Vector database
 data/vector_db/
@@ -85,3 +86,4 @@ Thumbs.db
 # Claude Code
 claude/
 .claude/
+CLAUDE.md
