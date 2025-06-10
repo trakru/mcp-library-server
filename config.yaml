@@ -1,0 +1,32 @@
+embeddings:
+  model: "all-MiniLM-L6-v2"
+  device: "cpu"  # or "cuda" if GPU available
+  batch_size: 32
+  cache_dir: "./models/embeddings"
+
+generation:
+  provider: "ollama"
+  model: "qwen2.5:7b"
+  base_url: "http://localhost:11434"
+  temperature: 0.7
+  max_tokens: 2048
+
+books:
+  data_dir: "data/epub"
+  processed_dir: "data/processed"
+  index_dir: "data/vector_db"
+
+vector_store:
+  provider: "chromadb"  # or "faiss"
+  collection_name: "ml_books"
+  chunk_size: 512
+  chunk_overlap: 50
+
+search:
+  max_results: 5
+  similarity_threshold: 0.5  # Lowered for better recall with sentence-transformers
+  rerank: false  
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

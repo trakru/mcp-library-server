@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ai-book-agent"
+version = "0.1.0"
+description = "AI Book Agent MCP Server - ML textbook knowledge via MCP protocol"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [
+    {name = "AI Book Agent Team"},
+]
+keywords = ["mcp", "ai", "machine-learning", "rag", "embeddings"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "mcp[cli]",
+    "ebooklib",
+    "beautifulsoup4", 
+    "sentence-transformers",
+    "torch",
+    "chromadb",
+    "ollama",
+    "pandas",
+    "numpy",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ipykernel", 
+    "notebook",
+    "black",
+    "ruff",
+    "mypy",
+]
+
+[project.scripts]
+ai-book-agent = "server:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.ruff] 
+line-length = 88
+target-version = "py311"
+select = ["E", "F", "I", "N", "W", "B", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.isort]
+known-first-party = ["src"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

@@ -1,4 +1,32 @@
-pyepub
+# MCP Framework
+mcp[cli]
+
+# EPUB Processing
+ebooklib
+beautifulsoup4
+
+# ML and Embeddings
+sentence-transformers
+torch
+
+# Vector Storage
+chromadb
+# faiss-cpu  # Alternative to chromadb
+
+# LLM Integration
+ollama
+
+# Data Processing
 pandas
+numpy
+
+# Configuration
+pyyaml
+
+# Testing
+pytest
+pytest-asyncio
+
+# Optional: Development tools
 ipykernel
 notebook
